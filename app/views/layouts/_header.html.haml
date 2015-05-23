@@ -1,14 +1,15 @@
 .container
   %h1.center
     = link_to "Pomarity", '/'
-/ .navbar
-/   .navbar-inner
-/     .container
-/       %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-/         %span.icon-bar
-/         %span.icon-bar
-/         %span.icon-bar
-/       %div{:class => "nav-collapse.collapse"}
-/         %ul.nav
-/           %li
-/             = link_to 'Home',  root_path
+.navbar
+  .navbar-inner
+    .container
+      / %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+      /   %span.icon-bar
+      /   %span.icon-bar
+      /   %span.icon-bar
+      %div{:class => "nav-collapse.collapse"}
+        %ul.nav
+          %li
+            = link_to 'Home', root_path
+            = link_to 'Upload JSON',  upload_form_path

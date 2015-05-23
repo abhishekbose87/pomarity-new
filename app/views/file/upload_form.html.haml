@@ -1,0 +1,9 @@
+.row.col-md-12.uploader-form
+  / %form{action: "/pomodoro_upload", method: :post}
+  /   %input{type: "file", value: "CHOOSE FILE", name: "pomodoro_upload_file", id: "pomodoro_upload"}
+  /   %br
+  /   %input.btn-success{type: "submit", value: "Upload"}
+
+  = form_tag({action: :pomodoro_upload}, multipart: true) do
+    = file_field_tag 'pomodoro_upload_file'
+    = submit_tag "Upload", class: "btn-success"

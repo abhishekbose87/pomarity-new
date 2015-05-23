@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root 'reports#index'
+
+  get '/upload_form' => 'file#upload_form'
+  post '/pomodoro_upload' => 'file#pomodoro_upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
