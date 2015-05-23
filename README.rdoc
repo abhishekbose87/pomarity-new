@@ -1,0 +1,9 @@
+== README
+
+[Pomarity](http://pomarity.in) is about having clarity as to how your day mapped out using the pomodoro technique.
+
+Feature list
+
+- Allow only admin user to upload json data
+- Create data in Pomodoro table using json file
+- Using the table, create beautiful graphs
