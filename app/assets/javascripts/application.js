@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require amcharts
+//= require serial
+//= require light
+//= require amstock
 //= require_tree .

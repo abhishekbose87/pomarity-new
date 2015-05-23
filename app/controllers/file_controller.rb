@@ -30,7 +30,7 @@ class FileController < ApplicationController
     work_units.each do |work_unit|
       start_datetime = DateTime.parse(Time.at(work_unit["_t"]).to_s)
       end_datetime = start_datetime + 25.minutes  
-      PomodoroUnit.create(start_datetime: start_datetime, id: work_unit["_id"], end_datetime: end_datetime, project_id: work_unit["_p"])
+      PomodoroUnit.create(start_datetime: start_datetime, id: work_unit["_id"], end_datetime: end_datetime, project_id: work_unit["_p"], work_date: work_unit["_dt"])
     end
   end
 
