@@ -5,12 +5,12 @@ class FileController < ApplicationController
 
   def pomodoro_upload
     uploaded_io = params["pomodoro_upload_file"]
-    file_path = Rails.root.join('public', 'uploads', uploaded_io.original_filename)
-    
+    file_path = Rails.root.join('public', 'uploads', 'pomodoro_upload_file.json')
+
     File.open(file_path, 'wb') do |file|
       file.write(uploaded_io.read)
     end
-  
+
     file = File.read(file_path)
     data_hash = JSON.parse(file)
 
@@ -29,7 +29,7 @@ class FileController < ApplicationController
   def load_pomodoro_units(work_units)
     work_units.each do |work_unit|
       start_datetime = DateTime.parse(Time.at(work_unit["_t"]).to_s)
-      end_datetime = start_datetime + 25.minutes  
+      end_datetime = start_datetime + 25.minutes
       PomodoroUnit.create(start_datetime: start_datetime, id: work_unit["_id"], end_datetime: end_datetime, project_id: work_unit["_p"], work_date: work_unit["_dt"])
     end
   end
