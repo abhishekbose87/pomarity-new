@@ -17,5 +17,6 @@
 //= require amcharts
 //= require serial
 //= require light
+//= require gantt
 //= require amstock
 //= require_tree .

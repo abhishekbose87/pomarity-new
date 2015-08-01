@@ -10,8 +10,8 @@ $(document).ready ->
 create_pomodoro_bar_chart = (chartData)->
   chart = AmCharts.makeChart('pomodoro_bar_chart',
     type: 'stock'
-    'theme': 'none'
-    'path': '/amchart_images/'
+    theme: 'none'
+    pathToImages: '/assets/amcharts/'
     dataSets: [ {
       fieldMappings: [
         {
