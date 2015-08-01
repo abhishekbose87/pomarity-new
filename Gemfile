@@ -41,3 +41,4 @@ gem 'pg', '~> 0.17.1'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_captcha2', require: 'simple_captcha'

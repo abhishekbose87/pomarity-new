@@ -6,4 +6,5 @@
 
   = form_tag({action: :pomodoro_upload}, multipart: true) do
     = file_field_tag 'pomodoro_upload_file'
+    = show_simple_captcha
     = submit_tag "Upload", class: "btn-success"
