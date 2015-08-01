@@ -14,10 +14,23 @@ class FileController < ApplicationController
     file = File.read(file_path)
     data_hash = JSON.parse(file)
 
+    remove_projects
+    remove_pomodoro_units
+
     load_projects(data_hash["projects"])
     load_pomodoro_units(data_hash["workUnits"])
 
     redirect_to root_path, notice: "Data successfully uploaded"
+  end
+
+  private
+
+  def remove_projects
+    Project.destroy_all
+  end
+
+  def remove_pomodoro_units
+    PomodoroUnit.destroy_all
   end
 
   def load_projects(projects)
