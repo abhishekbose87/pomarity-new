@@ -1,11 +1,14 @@
 class ReportsController < ApplicationController
 
   def index
-
-    PomodoroUnit.joins(:project).group("pomodoro_units.work_date").select(
-      "#{case_query},
-       pomodoro_units.work_date as date"
-      ).order("date asc").to_jsvar(:pomodoro_units)
+    if PomodoroUnit.count > 0
+      PomodoroUnit.joins(:project).group("pomodoro_units.work_date").select(
+        "#{case_query},
+         pomodoro_units.work_date as date"
+        ).order("date asc").to_jsvar(:pomodoro_units)
+    else
+      redirect_to upload_form_path
+    end
   end
 
   private
