@@ -28,6 +28,7 @@ gem 'json'
 gem 'haml-rails', '~> 0.5.3'
 gem 'js_vars'
 gem 'pg', '~> 0.17.1'
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
